@@ -1,0 +1,20 @@
+name: gaussian_splatting
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - cudatoolkit
+  - plyfile
+  - python
+  - pip
+  - pytorch
+  - torchaudio
+  - torchvision
+  - tqdm
+  - pip:
+    - submodules/tcgs_speedy_rasterizer
+    - submodules/simple-knn
+    - submodules/fused-ssim
+    - opencv-python
+    - joblib
