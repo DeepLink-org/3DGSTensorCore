@@ -13,7 +13,7 @@ The code and usage of TC-GS is in ```submodules/tcgs_speedy_rasterizer/tcgs```.
 
 ## Installation
 ```shell
-git clone https://github.com/TensorCore3DGS/3DGSTensorCore --recursive
+git clone https://github.com/DeepLink-org/3DGSTensorCore --recursive
 ```
 
 ## Setup
