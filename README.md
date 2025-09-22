@@ -7,7 +7,7 @@ This repo is an example applying [Speedy-splat](https://speedysplat.github.io) w
 The code and usage of TC-GS is in ```submodules/tcgs_speedy_rasterizer/tcgs```.
 
 ## TODO
-+ Release the Paper ✅ [paper](https://drive.google.com/file/d/1tIOX5eAdJqqK7WuINor-YG0ck5rgKATG/view?usp=sharing)
++ Release the Paper ✅ [paper](https://drive.google.com/file/d/1tIOX5eAdJqqK7WuINor-YG0ck5rgKATG/view?usp=sharing)(Preprint Version)
 + Support Training with Tensor Cores
 + Utilizing Tensor Cores on ```preprocessCUDA``` 
 
