@@ -86,7 +86,7 @@ class _RasterizeGaussians(torch.autograd.Function):
         if raster_settings.debug:
             cpu_args = cpu_deep_copy_tuple(args) # Copy them before they can be corrupted
             try:
-                num_rendered, color, radii, kernel_times, geomBuffer, binningBuffer, imgBuffer = _C.rasterize_gaussians(*args)
+                num_rendered, color, invdepth, radii, kernel_times, geomBuffer, binningBuffer, imgBuffer = _C.rasterize_gaussians(*args)
             except Exception as ex:
                 torch.save(cpu_args, "snapshot_fw.dump")
                 print("\nAn error occured in forward. Please forward snapshot_fw.dump for debugging.")
@@ -95,7 +95,7 @@ class _RasterizeGaussians(torch.autograd.Function):
             import time
             torch.cuda.synchronize()
             start = time.perf_counter()
-            num_rendered, color, radii, kernel_times, geomBuffer, binningBuffer, imgBuffer = _C.rasterize_gaussians(*args)
+            num_rendered, color, invdepth, radii, kernel_times, geomBuffer, binningBuffer, imgBuffer = _C.rasterize_gaussians(*args)
             torch.cuda.synchronize()
             end = time.perf_counter()
             # print(f"speedy: {(end - start) * 1000}ms")
@@ -105,7 +105,7 @@ class _RasterizeGaussians(torch.autograd.Function):
         ctx.raster_settings = raster_settings
         ctx.num_rendered = num_rendered
         ctx.save_for_backward(colors_precomp, means3D, scales, rotations, cov3Ds_precomp, radii, sh, geomBuffer, binningBuffer, imgBuffer)
-        return color, radii, end - start
+        return color, radii, invdepth, end - start
 
     @staticmethod
     def backward(ctx, grad_out_color, _0, _1):

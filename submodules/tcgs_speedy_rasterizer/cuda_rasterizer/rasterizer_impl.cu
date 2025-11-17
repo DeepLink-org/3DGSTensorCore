@@ -204,8 +204,9 @@ int CudaRasterizer::Rasterizer::forward(
 	const float* cam_pos,
 	const float tan_fovx, float tan_fovy,
 	const bool prefiltered,
-  float* kernel_times,
+  	float* kernel_times,
 	float* out_color,
+	float* out_invdepth,
 	int* radii,
 	bool debug)
 {
@@ -334,7 +335,7 @@ int CudaRasterizer::Rasterizer::forward(
 		background,
 		out_color,
 		geomState.depths,
-		nullptr), debug)
+		out_invdepth), debug)
 #else
 	CHECK_CUDA(FORWARD::render(
 		tile_grid, block,
@@ -344,10 +345,12 @@ int CudaRasterizer::Rasterizer::forward(
 		geomState.means2D,
 		feature_ptr,
 		geomState.conic_opacity,
+		geomState.depths,
 		imgState.accum_alpha,
 		imgState.n_contrib,
 		background,
-		out_color), debug)
+		out_color,
+		out_invdepth), debug)
 #endif
   // End Overall timer
   cudaEventRecord(overallStop, 0);
