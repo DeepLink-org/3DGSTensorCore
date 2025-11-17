@@ -1,6 +1,6 @@
 DATA=[your_data_path]
-SCENE=/mnt/shared-storage-user/ailab-sys/liaozimu/data/tandt
-CKPT=/mnt/shared-storage-user/ailab-sys/liaozimu/ckpts/gaussian_splatting/
+SCENE=[your_scene]
+CKPT=[your_ckpt_path]
 
 # export CUDA_VISIBLE_DEVICES=0
 
