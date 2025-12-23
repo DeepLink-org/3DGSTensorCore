@@ -1,12 +1,10 @@
-# TC-GS: A Faster and Flexible 3DGS Module Utilizing Tensor Cores
+# TC-GS: A Faster and Flexible 3DGS Module Utilizing Tensor Cores ([paper](https://dl.acm.org/doi/10.1145/3757377.3764001),[slide](https://drive.google.com/file/d/1dGfh8DP8rpzSNY02pA-0vemK_XO2NL9u/view?usp=sharing))
 
 TC-GS is a flexible and fast library which can accelerate the ```renderCUDA``` process of 3DGS with Tensor Cores. It can be easily installed with various 3DGS kernels.
 
 This repo is an example applying [Speedy-splat](https://speedysplat.github.io) with TC-GS. We have also apply TC-GS on other acceleration kernels and achieving remarkable speedup.
 
 The code and usage of TC-GS is in ```submodules/tcgs_speedy_rasterizer/tcgs```.
-
-The paper is available at [https://dl.acm.org/doi/10.1145/3757377.3764001](https://dl.acm.org/doi/10.1145/3757377.3764001).
 
 ## TODO
 + Support Training with Tensor Cores
