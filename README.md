@@ -1,4 +1,4 @@
-# （SIGGRAPH Asia 2025) TC-GS: A Faster and Flexible 3DGS Module Utilizing Tensor Cores ([paper](https://dl.acm.org/doi/10.1145/3757377.3764001),[slide](https://drive.google.com/file/d/1dGfh8DP8rpzSNY02pA-0vemK_XO2NL9u/view?usp=sharing))
+# (SIGGRAPH Asia 2025) TC-GS: A Faster and Flexible 3DGS Module Utilizing Tensor Cores ([paper](https://dl.acm.org/doi/10.1145/3757377.3764001),[slide](https://drive.google.com/file/d/1dGfh8DP8rpzSNY02pA-0vemK_XO2NL9u/view?usp=sharing))
 
 TC-GS is a flexible and fast library which can accelerate the ```renderCUDA``` process of 3DGS with Tensor Cores. It can be easily installed with various 3DGS kernels.
 
